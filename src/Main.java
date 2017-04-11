@@ -1,9 +1,8 @@
-import org.omg.PortableServer.POA;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+    public static ArrayList <Producto> lista = new ArrayList<>();
 
     public static void main(String[] args) {
         menu();
@@ -11,7 +10,7 @@ public class Main {
 
     public static void menu(){
         Scanner input = new Scanner(System.in);
-        ArrayList <Producto> lista = new ArrayList<>();
+
         int opcion;
 
         System.out.println("*****************************");
@@ -25,20 +24,20 @@ public class Main {
         do {
             System.out.println("Inserte opción: ");
             opcion = input.nextInt();
-        }while (opcion >= 1 || opcion <= 4 );
+        }while (opcion <1 && opcion > 4 );
 
         switch (opcion){
             case 1:
-                añadir(lista);
+                añadir();
                 break;
             case 2:
-                eliminar(lista);
+                eliminar();
                 break;
             case 3:
-                mostrarProductos(lista);
+                mostrarProductos();
                 break;
             case 4:
-                consultarImporte(lista);
+                consultarImporte();
                 break;
             default:
                 menu();
@@ -46,7 +45,7 @@ public class Main {
         }
     }
 
-    public static void añadir(ArrayList productos){
+    public static void añadir(){
         Scanner input = new Scanner(System.in);
 
         String nombre;
@@ -60,20 +59,22 @@ public class Main {
 
         Producto producto = new Producto(nombre, precio);
 
-        productos.add(producto);
+        lista.add(producto);
 
+        menu();
+    }
+
+    public static void eliminar(){
 
     }
 
-    public static void eliminar(ArrayList productos){
-
+    public static void mostrarProductos(){
+        for (Object p: lista) {
+            System.out.println(p);
+        }
     }
 
-    public static void mostrarProductos(ArrayList productos){
-
-    }
-
-    public static void consultarImporte(ArrayList productos){
+    public static void consultarImporte(){
 
     }
 }
