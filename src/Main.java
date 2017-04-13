@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static ArrayList <Producto> lista = new ArrayList<>();
+    public static ArrayList<Producto> lista = new ArrayList<>();
 
     public static void main(String[] args) {
         menu();
     }
 
-    public static void menu(){
+    public static void menu() {
         Scanner input = new Scanner(System.in);
 
         int opcion;
@@ -24,9 +24,9 @@ public class Main {
         do {
             System.out.println("Inserte opción: ");
             opcion = input.nextInt();
-        }while (opcion <1 && opcion > 4 );
+        } while (opcion < 1 && opcion > 4);
 
-        switch (opcion){
+        switch (opcion) {
             case 1:
                 añadir();
                 break;
@@ -45,7 +45,7 @@ public class Main {
         }
     }
 
-    public static void añadir(){
+    public static void añadir() {
         Scanner input = new Scanner(System.in);
 
         String nombre;
@@ -64,17 +64,41 @@ public class Main {
         menu();
     }
 
-    public static void eliminar(){
+    public static void eliminar() {
+        Scanner input = new Scanner(System.in);
+        int index;
 
-    }
-
-    public static void mostrarProductos(){
-        for (Object p: lista) {
+        for (Object p : lista) {
             System.out.println(p);
         }
+
+        System.out.println("Indice a borrar: ");
+        index = input.nextInt();
+
+        lista.remove(index);
+
+        menu();
     }
 
-    public static void consultarImporte(){
+    public static void mostrarProductos() {
+        for (Object p : lista) {
+            System.out.println(p);
+        }
 
+        menu();
+    }
+
+    public static void consultarImporte() {
+        double total = 0;
+
+        for (Producto p : lista) {
+            Producto producto = p;
+            System.out.println(p.getPrecio());
+            total += p.getPrecio();
+        }
+
+        System.out.println("El precio total es: " + total + "€");
+
+        menu();
     }
 }
