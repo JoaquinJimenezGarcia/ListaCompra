@@ -19,8 +19,8 @@ public class Main {
             System.out.println("2 - Eliminar producto");
             System.out.println("3 - Mostrar lista productos");
             System.out.println("4 - Consultar importe total");
-            System.out.println("0 - Pagar");
         }
+        System.out.println("0 - Pagar");
         System.out.println("*****************************");
 
         if (lista.size() > 0) {
