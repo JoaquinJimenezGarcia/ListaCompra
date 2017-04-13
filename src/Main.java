@@ -15,33 +15,51 @@ public class Main {
 
         System.out.println("*****************************");
         System.out.println("1 - Añadir nuevo producto");
-        System.out.println("2 - Eliminar producto");
-        System.out.println("3 - Mostrar lista productos");
-        System.out.println("4 - Consultar importe total");
-        System.out.println("0 - Pagar");
+        if (lista.size() > 0) {
+            System.out.println("2 - Eliminar producto");
+            System.out.println("3 - Mostrar lista productos");
+            System.out.println("4 - Consultar importe total");
+            System.out.println("0 - Pagar");
+        }
         System.out.println("*****************************");
 
-        do {
-            System.out.println("Inserte opción: ");
-            opcion = input.nextInt();
-        } while (opcion < 1 && opcion > 4);
+        if (lista.size() > 0) {
+            do {
+                System.out.println("Inserte opción: ");
+                opcion = input.nextInt();
+            } while (opcion < 1 && opcion > 4);
 
-        switch (opcion) {
-            case 1:
-                añadir();
-                break;
-            case 2:
-                eliminar();
-                break;
-            case 3:
-                mostrarProductos();
-                break;
-            case 4:
-                consultarImporte();
-                break;
-            default:
-                menu();
-                break;
+            switch (opcion) {
+                case 1:
+                    añadir();
+                    break;
+                case 2:
+                    eliminar();
+                    break;
+                case 3:
+                    mostrarProductos();
+                    break;
+                case 4:
+                    consultarImporte();
+                    break;
+                default:
+                    menu();
+                    break;
+            }
+        }else {
+            do {
+                System.out.println("Inserte opción: ");
+                opcion = input.nextInt();
+            } while (opcion != 1);
+
+            switch (opcion) {
+                case 1:
+                    añadir();
+                    break;
+                default:
+                    menu();
+                    break;
+            }
         }
     }
 
@@ -75,7 +93,11 @@ public class Main {
         System.out.println("Indice a borrar: ");
         index = input.nextInt();
 
-        lista.remove(index);
+        if (index < lista.size()) {
+            lista.remove(index);
+        }else {
+            System.out.println("Por favor, inserte un índice válido");
+        }
 
         menu();
     }
