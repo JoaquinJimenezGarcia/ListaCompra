@@ -26,7 +26,7 @@ public class Menu {
             do {
                 System.out.println("Inserte opción: ");
                 opcion = input.nextInt();
-            } while (opcion < 1 && opcion > 4);
+            } while (opcion < 1 && opcion > 4 && opcion != 0);
 
             switch (opcion) {
                 case 1:
@@ -42,21 +42,19 @@ public class Menu {
                     consultarImporte();
                     break;
                 default:
-                    show();
                     break;
             }
         }else {
             do {
                 System.out.println("Inserte opción: ");
                 opcion = input.nextInt();
-            } while (opcion != 1);
+            } while (opcion != 1 && opcion != 0);
 
             switch (opcion) {
                 case 1:
                     añadir();
                     break;
                 default:
-                    show();
                     break;
             }
         }
@@ -72,7 +70,7 @@ public class Menu {
         nombre = input.nextLine();
 
         System.out.println("Inserte precio: ");
-        precio = input.nextInt();
+        precio = input.nextDouble();
 
         Producto producto = new Producto(nombre, precio);
 
