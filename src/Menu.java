@@ -7,6 +7,10 @@ import java.util.Scanner;
 public class Menu {
     public static ArrayList<Producto> lista = new ArrayList<>();
 
+    /**
+     * Muestra el menú de inicio y te da a elegir unas opciones
+     * dependiendo de si tienes o no elementos en la lista
+     */
     public static void show(){
         Scanner input = new Scanner(System.in);
 
@@ -60,6 +64,9 @@ public class Menu {
         }
     }
 
+    /**
+     * Añade productos a la lista
+     */
     public static void añadir() {
         Scanner input = new Scanner(System.in);
 
@@ -79,6 +86,9 @@ public class Menu {
         show();
     }
 
+    /**
+     * Elimina productos de la lista
+     */
     public static void eliminar() {
         Scanner input = new Scanner(System.in);
         int index;
@@ -97,11 +107,17 @@ public class Menu {
         show();
     }
 
+    /**
+     * Muestra la lista de prodcutos
+     */
     public static void mostrarProductos() {
         showList();
         show();
     }
 
+    /**
+     * Consulta el importe total de la lista
+     */
     public static void consultarImporte() {
         double total = 0;
 
@@ -115,6 +131,9 @@ public class Menu {
         show();
     }
 
+    /**
+     * Muestra los elementos del Array List
+     */
     public static void showList(){
         for (Object p : lista) {
             System.out.println(p);
