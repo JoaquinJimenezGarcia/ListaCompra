@@ -135,8 +135,8 @@ public class Menu {
      * Muestra los elementos del Array List
      */
     public static void showList(){
-        for (Object p : lista) {
-            System.out.println(p);
+        for (Producto p : lista) {
+            System.out.println(lista.indexOf(p) + " - " + p);
         }
     }
 }
