@@ -1,3 +1,5 @@
+import Controller.ShoppingListApp;
+
 public class Main {
     /**
      * Función del Main que hace la llamada para que cargue
@@ -5,6 +7,7 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-        Menu.show();
+        ShoppingListApp myApp = new ShoppingListApp();
+        myApp.run();
     }
 }

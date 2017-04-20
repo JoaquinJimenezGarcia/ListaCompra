@@ -1,3 +1,5 @@
+package Model;
+
 /**
  * Created by joaquinjimenezgarcia on 11/4/17.
  * Clase de los productos
@@ -31,7 +33,7 @@ public class Producto {
     }
 
     public void setNombre(String nombre) {
-        if (nombre.equals(" ")){
+        if (nombre.equals("")){
             this.nombre = "Sin nombre";
         }else {
             this.nombre = nombre;
@@ -56,7 +58,6 @@ public class Producto {
      */
     @Override
     public String toString() {
-        return "Producto = " + nombre +
-                ", PVP = " + precio + " €";
+        return nombre + " (" + precio + " €)";
     }
 }
