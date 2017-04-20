@@ -73,7 +73,7 @@ public class Menu {
         String nombre;
         double precio;
 
-        System.out.println("Inserte nombre: asas ");
+        System.out.println("Inserte nombre: ");
         nombre = input.nextLine();
 
         System.out.println("Inserte precio: ");

@@ -22,8 +22,8 @@ public class Producto {
      * @param precio precio que obtendrá el producto
      */
     public Producto(String nombre, double precio) {
-        this.nombre = nombre;
-        this.precio = precio;
+        this.setNombre(nombre);
+        this.setPrecio(precio);
     }
 
     public String getNombre() {
@@ -31,7 +31,11 @@ public class Producto {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if (nombre.equals(" ")){
+            this.nombre = "Sin nombre";
+        }else {
+            this.nombre = nombre;
+        }
     }
 
     public double getPrecio() {
@@ -39,7 +43,11 @@ public class Producto {
     }
 
     public void setPrecio(double precio) {
-        this.precio = precio;
+        if (precio < 0){
+            this.precio = 0.0;
+        }else{
+            this.precio = precio;
+        }
     }
 
     /**
