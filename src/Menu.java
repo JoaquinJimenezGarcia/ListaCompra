@@ -73,7 +73,7 @@ public class Menu {
         String nombre;
         double precio;
 
-        System.out.println("Inserte nombre: ");
+        System.out.println("Inserte nombre: asas ");
         nombre = input.nextLine();
 
         System.out.println("Inserte precio: ");
@@ -122,7 +122,7 @@ public class Menu {
         double total = 0;
 
         for (Producto p : lista) {
-            System.out.println(p.getPrecio());
+            System.out.println(p);
             total += p.getPrecio();
         }
 
