@@ -24,17 +24,32 @@ public class ShoppingListApp {
                     leerProducto();
                     break;
                 case 2:
-
+                    if (listaProductos.size() > 0){
+                        leerIndice();
+                    }
                     break;
                 case 3:
                     listaProductos.showProductos();
                     break;
                 case 4:
+                    listaProductos.showImport();
                     break;
                 default:
                     break;
             }
         }
+    }
+
+    public void leerIndice(){
+        Scanner input = new Scanner(System.in);
+        int index;
+
+        listaProductos.showProductos();
+
+        System.out.println("Indice a borrar: ");
+        index = input.nextInt();
+
+        listaProductos.delete(index);
     }
 
     private void leerProducto(){
@@ -62,9 +77,13 @@ public class ShoppingListApp {
 
         System.out.println("**********************************");
         System.out.println("* 1 - Añadir producto            *");
-        System.out.println("* 2 - Eliminar producto          *");
-        System.out.println("* 3 - Mostrar lista de productos *");
-        System.out.println("* 4 - Consultar importe total    *");
+
+        if (listaProductos.size() > 0) {
+            System.out.println("* 2 - Eliminar producto          *");
+            System.out.println("* 3 - Mostrar lista de productos *");
+            System.out.println("* 4 - Consultar importe total    *");
+        }
+
         System.out.println("* 0 - Salir                      *");
         System.out.println("**********************************");
         System.out.println("Opción: ");
