@@ -36,6 +36,10 @@ public class ListaProductos {
         }
     }
 
+    public void modify(int index, Producto producto){
+        productos.set(index, producto);
+    }
+
     public void showImport(){
         double total = 0;
 

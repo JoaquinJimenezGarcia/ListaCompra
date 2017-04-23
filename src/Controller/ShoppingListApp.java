@@ -21,11 +21,11 @@ public class ShoppingListApp {
         while ((option = showMenu()) != 0){
             switch (option) {
                 case 1:
-                    leerProducto();
+                    listaProductos.addProducto(leerProducto());
                     break;
                 case 2:
                     if (listaProductos.size() > 0){
-                        leerIndice();
+                        listaProductos.delete(leerIndice());
                     }
                     break;
                 case 3:
@@ -36,7 +36,7 @@ public class ShoppingListApp {
                     break;
                 case 5:
                     if (listaProductos.size() > 0){
-
+                        listaProductos.modify(leerIndice(), leerProducto());
                     }
                     break;
                 default:
@@ -45,19 +45,19 @@ public class ShoppingListApp {
         }
     }
 
-    public void leerIndice(){
+    private int leerIndice(){
         Scanner input = new Scanner(System.in);
         int index;
 
         listaProductos.showProductos();
 
-        System.out.println("Indice a borrar: ");
+        System.out.println("Indice: ");
         index = input.nextInt();
 
-        listaProductos.delete(index);
+        return index;
     }
 
-    private void leerProducto(){
+    private Producto leerProducto(){
         Scanner input = new Scanner(System.in);
         String nombre;
         double precio;
@@ -73,7 +73,7 @@ public class ShoppingListApp {
 
         producto = new Producto(nombre, precio);
 
-        listaProductos.addProducto(producto);
+        return producto;
     }
 
     private int showMenu(){
