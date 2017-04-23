@@ -37,7 +37,9 @@ public class ListaProductos {
     }
 
     public void modify(int index, Producto producto){
-        productos.set(index, producto);
+        if (producto != null && index >= 0) {
+            productos.set(index, producto);
+        }
     }
 
     public void showImport(){

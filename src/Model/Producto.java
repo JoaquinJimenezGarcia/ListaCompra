@@ -8,6 +8,7 @@ package Model;
 public class Producto {
     private String nombre;
     private double precio;
+    private int cantidad;
 
     /**
      * Constructor por defecto que establecerá un producto estándard
@@ -16,6 +17,7 @@ public class Producto {
     public Producto() {
         this.nombre = "Standard";
         this.precio = 0.00;
+        this.cantidad = 0;
     }
 
     /**
@@ -23,9 +25,22 @@ public class Producto {
      * @param nombre nombre del producto
      * @param precio precio que obtendrá el producto
      */
-    public Producto(String nombre, double precio) {
+    public Producto(String nombre, double precio, int cantidad) {
         this.setNombre(nombre);
         this.setPrecio(precio);
+        this.setCantidad(cantidad);
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        if (cantidad > 0){
+            this.cantidad = cantidad;
+        }else{
+            this.cantidad = 1;
+        }
     }
 
     public String getNombre() {
@@ -58,6 +73,6 @@ public class Producto {
      */
     @Override
     public String toString() {
-        return nombre + " (" + precio + " €)";
+        return nombre + " (" + precio + " €). Cantidad: " + cantidad;
     }
 }

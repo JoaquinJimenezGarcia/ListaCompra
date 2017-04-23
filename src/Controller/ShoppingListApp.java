@@ -61,6 +61,7 @@ public class ShoppingListApp {
         Scanner input = new Scanner(System.in);
         String nombre;
         double precio;
+        int cantidad;
         Producto producto;
 
         do {
@@ -71,7 +72,10 @@ public class ShoppingListApp {
         System.out.println("Precio del artículo: ");
         precio = input.nextDouble();
 
-        producto = new Producto(nombre, precio);
+        System.out.println("Inserte cantidad: ");
+        cantidad = input.nextInt();
+
+        producto = new Producto(nombre, precio, cantidad);
 
         return producto;
     }
