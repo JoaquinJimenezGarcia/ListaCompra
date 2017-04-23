@@ -48,7 +48,7 @@ public class ListaProductos {
         showProductos();
 
         for (Producto p : productos) {
-            total += p.getPrecio();
+            total += p.getPrecio()*p.getCantidad();
         }
 
         System.out.println("El precio total es: " + total + "€");
