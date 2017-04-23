@@ -34,6 +34,11 @@ public class ShoppingListApp {
                 case 4:
                     listaProductos.showImport();
                     break;
+                case 5:
+                    if (listaProductos.size() > 0){
+
+                    }
+                    break;
                 default:
                     break;
             }
@@ -82,6 +87,7 @@ public class ShoppingListApp {
             System.out.println("* 2 - Eliminar producto          *");
             System.out.println("* 3 - Mostrar lista de productos *");
             System.out.println("* 4 - Consultar importe total    *");
+            System.out.println("* 5 - Modificar producto         *");
         }
 
         System.out.println("* 0 - Salir                      *");
