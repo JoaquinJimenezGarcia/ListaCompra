@@ -36,6 +36,10 @@ public class ListaProductos {
         }
     }
 
+    public void changeQuantity(int index, int cantidad){
+        productos.get(index).setCantidad(productos.get(index).getCantidad() + cantidad);
+    }
+
     public void modify(int index, Producto producto){
         if (producto != null && index >= 0) {
             productos.set(index, producto);

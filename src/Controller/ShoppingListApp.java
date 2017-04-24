@@ -39,6 +39,11 @@ public class ShoppingListApp {
                         listaProductos.modify(leerIndice(), leerProducto());
                     }
                     break;
+                case 6:
+                    if (listaProductos.size() > 0){
+                        listaProductos.changeQuantity(leerIndice(),leerCantidad());
+                    }
+                    break;
                 default:
                     break;
             }
@@ -55,6 +60,16 @@ public class ShoppingListApp {
         index = input.nextInt();
 
         return index;
+    }
+
+    private int leerCantidad(){
+        Scanner input = new Scanner (System.in);
+        int cantidad;
+
+        System.out.println("Cuántas unidades desea añadir? ");
+        cantidad = input.nextInt();
+
+        return cantidad;
     }
 
     private Producto leerProducto(){
@@ -92,6 +107,7 @@ public class ShoppingListApp {
             System.out.println("* 3 - Mostrar lista de productos *");
             System.out.println("* 4 - Consultar importe total    *");
             System.out.println("* 5 - Modificar producto         *");
+            System.out.println("* 6 - Modificar cantidad         *");
         }
 
         System.out.println("* 0 - Salir                      *");
